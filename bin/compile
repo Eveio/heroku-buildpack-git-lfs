@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: bin/compile BUILD_DIR CACHE_DIR ENV_DIR SOURCE_VERSION
+# Usage: bin/compile BUILD_DIR CACHE_DIR ENV_DIR
 
 set -e
 set -o pipefail
@@ -9,7 +9,6 @@ set -o pipefail
 build_dir="$1"
 env_dir="$3"
 source_version="$4"
-echo "Detected git commit: $source_version"
 
 function die {
     echo "$@" >&2
@@ -38,6 +37,7 @@ echo "-----> Install Git LFS"
 
 echo "-----> Download Git LFS assets"
 (
+    echo "Detected GIT commit hash: $SOURCE_VERSION"
     pushd "$build_dir"
 
     mkdir -p .heroku/bin
