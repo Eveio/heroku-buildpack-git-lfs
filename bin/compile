@@ -37,7 +37,10 @@ echo "-----> Install Git LFS"
 
 echo "-----> Download Git LFS assets"
 (
-    echo "Detected GIT commit hash: $HEROKU_SLUG_COMMIT"
+    echo "printing the shit"
+
+    printenv
+
     pushd "$build_dir"
 
     mkdir -p .heroku/bin
