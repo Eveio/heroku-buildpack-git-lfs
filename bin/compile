@@ -5,6 +5,8 @@
 set -e
 set -o pipefail
 
+echo "Detected git commit: $SOURCE_VERSION"
+
 build_dir="$1"
 env_dir="$3"
 
@@ -39,8 +41,6 @@ echo "-----> Download Git LFS assets"
 
     mkdir -p .heroku/bin
     mv /tmp/git-lfs .heroku/bin/
-
-    echo "Detected git revision: $source_version"
 
     mkdir -p .profile.d
     cat <<"EOF" > .profile.d/heroku-buildpack-git-lfs.sh
