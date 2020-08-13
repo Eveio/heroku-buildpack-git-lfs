@@ -37,7 +37,7 @@ echo "-----> Install Git LFS"
 
 echo "-----> Download Git LFS assets"
 (
-    echo "Detected GIT commit hash: $SOURCE_VERSION"
+    echo "Detected GIT commit hash: $HEROKU_SLUG_COMMIT"
     pushd "$build_dir"
 
     mkdir -p .heroku/bin
